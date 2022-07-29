@@ -1,5 +1,13 @@
 import { render } from 'solid-js/web';
+import { HopeProvider } from '@hope-ui/solid';
 
-import { TodoList } from './todo-list';
+import { Calculator } from './Calculator';
 
-render(() => <TodoList />, document.getElementById('root'));
+render(
+  () => (
+    <HopeProvider>
+      <Calculator />
+    </HopeProvider>
+  ),
+  document.getElementById('root') || document.body
+);
