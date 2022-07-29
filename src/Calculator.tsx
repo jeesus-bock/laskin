@@ -49,31 +49,31 @@ export const Calculator: Component = () => {
   return (
     <Center height='$full'>
       <Grid templateColumns='repeat(1fr, 4)' gap='$4' borderRadius='$md' borderWidth='2px' borderColor='$info10' padding='$4'>
+        // Yläreunan lausekelaatikko vie gridin kaikki neljä saraketta
         <GridItem colSpan={4}>
           <ExprBox expr={expr()} valid={isValid()} />
         </GridItem>
+        // Nappeja tulee aina neljä vierekkäin.
         <CharButton char='1' add={addChar} />
         <CharButton char='2' add={addChar} />
         <CharButton char='3' add={addChar} />
         <CharButton char='(' add={addChar} />
-
         <CharButton char='4' add={addChar} />
         <CharButton char='5' add={addChar} />
         <CharButton char='6' add={addChar} />
         <CharButton char=')' add={addChar} />
-
         <CharButton char='7' add={addChar} />
         <CharButton char='8' add={addChar} />
         <CharButton char='9' add={addChar} />
         <CharButton char='.' add={addChar} />
-
         <CharButton char='+' add={addChar} />
         <CharButton char='0' add={addChar} />
         <CharButton char='-' add={addChar} />
         <CharButton char='*' add={addChar} />
-
         <CharButton char='/' add={addChar} />
+        // C-nappi kutsuu delCharia addCharin sijaan
         <CharButton char='C' add={delChar} />
+        // =-nappi on kahden sarakkeen levyinen ja kutsuu evaluatea.
         <GridItem colSpan={2}>
           <CharButton char='=' add={evaluate} />
         </GridItem>
